@@ -1,0 +1,27 @@
+@import "colors";
+
+.section {
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    -ie-border-radius: 15px;
+    width: 100%;
+    padding: 15px;
+}
+
+body {
+    background-color: $background_color;
+}
+
+#content {
+    width: 75%;
+    margin: auto;
+}
+
+#main {
+    @extend .section;
+    background-color: $main_color;
+}
+
+@import "header";

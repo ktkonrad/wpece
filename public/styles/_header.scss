@@ -1,0 +1,30 @@
+$height: 240px;
+
+@import "colors";
+
+#header {
+    @extend .section;
+    height: $height;
+    background: $header_color;
+}
+
+#logo {
+    float: left;
+
+    img {
+        width: 225px;
+        height: $height;
+    }
+}
+
+#title {
+    float: right;
+    font-size: 40pt;
+}
+
+#login {
+    float: right;
+    input {
+        background-color: $background_color;
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "name": "wpece",
+    "version": "0.0.1",
+    "author": "Kyle Konrad",
+    "contributors" : [
+        {
+            "name": "Kyle Konrad",
+            "email": "kyle.t.konrad@gmail.com"
+        },
+        {
+            "name": "Zoe Konrad",
+            "email": "konraz@rpi.edu"
+        }
+    ],
+    "dependencies": {
+        "express": "2.5.x",
+        "jade": "0.26.x",
+        "mysql": "0.9.x",
+        "orm": "0.1.x"
+    },
+    "engine": "node >= 0.8.1"
+}
