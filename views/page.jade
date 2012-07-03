@@ -2,19 +2,22 @@ doctype 5
 html
   head
     link(type="text/css", rel="stylesheet", href="styles/page.css")
+    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+    script(type="text/javascript", src="/scripts/page.js")
   body
     title Winter Park Elk Court Escapes
     #content
       #header
         #logo 
           img(src="/images/logo.gif")
-        #login
-          form
-            input(name="email")
-            label email
-            input#password(type="password", name="password")
-            label password
-            input#login_submit(type="submit", value="Login")
+        #user
+          if session.user
+            p Signed in as #{session.user.email}.
+            button#signout_button Sign out
+          else
+            button#signin_button Sign in
         #title Winter Park Elk Court Escapes
       #main
         block main
+    #signin
+      include signin

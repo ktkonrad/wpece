@@ -1,0 +1,16 @@
+#signin {
+    display: none;
+    z-index: 1;
+
+    position: fixed;
+    margin: auto;
+    top: 30px;
+
+    width: 300px;
+    height: 200px;
+
+    background: white;
+    border: 2px solid black {
+        radius: 10px;
+    }
+}
