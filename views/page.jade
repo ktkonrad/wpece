@@ -11,11 +11,12 @@ html
         #logo 
           img(src="/images/logo.gif")
         #user
-          if session.user
-            p Signed in as #{session.user.email}.
-            button#signout_button Sign out
+          if user
+            p#signed_in_as
+              | Signed in as #{user.name || user.email}. 
+              a#signout_button(href="/logout") Sign out
           else
-            button#signin_button Sign in
+            a#signin_button(href="javascript: void(0);") Sign in
         #title Winter Park Elk Court Escapes
       #main
         block main
