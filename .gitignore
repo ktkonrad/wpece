@@ -2,3 +2,4 @@
 lib
 public/styles/*.css
 .sass-cache
+node_modules

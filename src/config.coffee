@@ -1,10 +1,16 @@
-config = {}
+module.exports = {
+  hostname: "http://dev.winterparkelkcourtescapes.com:10000"
+  mongo: {
+    host: "dev.winterparkelkcourtescapes.com"
+    database: "wpece"
+  },
+  facebook: {
+  appId: '373043746094559',
+  appSecret: 'c8006f02927e3377bcaab056893e9f91'
+  },
+  google: {
+    appId: '502668132702.apps.googleusercontent.com',
+    appSecret: 'unwhekGfKsiqcx0yxu7iA8tY'
+  }
+}
 
-config.mongo = {}
-config.mongo.host = "dev.winterparkelkcourtescapes.com"
-config.mongo.port = 27017
-config.mongo.user = "wpece"
-config.mongo.password = "y-kaSbK1T9C0xvmKKP0EqT8_"
-config.mongo.database = "wpece"
-
-module.exports = config
