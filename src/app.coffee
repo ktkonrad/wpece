@@ -19,17 +19,33 @@ everyauth.facebook
 )
 .findOrCreateUser( (session, accessToken, accessTokExtra, fbUserMetadata) ->
   promise = @Promise()
-  models.User.findOrCreateFacebook(session, accessToken, accessTokExtra, fbUserMetadata, promise)
+  models.User.schema.statics.findOrCreateFacebook(session, accessToken, accessTokExtra, fbUserMetadata, promise)
+  return promise;
+)
+.redirectPath('/');
+
+everyauth.google
+.appId('502668132702.apps.googleusercontent.com')
+.appSecret('unwhekGfKsiqcx0yxu7iA8tY')
+.scope('https://www.googleapis.com/auth/userinfo.profile')  
+.handleAuthCallbackError( (req, res) ->
+# If a user denies your app, Facebook will redirect the user to
+# /auth/facebook/callback?error_reason=user_denied&error=access_denied&error_description=The+user+denied+your+request.
+# This configurable route handler defines how you want to respond to
+# that.
+# If you do not configure this, everyauth renders a default fallback
+# view notifying the user that their authentication failed and why.
+)
+.findOrCreateUser( (session, accessToken, accessTokExtra, googleUserMetadata) ->
+  promise = @Promise()
+  models.User.schema.statics.findOrCreateGoogle(session, accessToken, accessTokExtra, googleUserMetadata, promise)
   return promise;
 )
 .redirectPath('/');
 
 everyauth.everymodule.findUserById (userId, callback) ->
-  models.User.find({where: {id: userId}})
-  .success (user) ->
-    callback('', user)
-  .fail (err) ->
-    callback(err, {})
+  models.User.findOne {_id: userId}, (err, user) ->
+    callback(err, user)
 
 # initialization
 app = express.createServer()
