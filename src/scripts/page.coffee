@@ -27,4 +27,4 @@ $(document).ready ->
       show_signedin(data.email)
     .error (jqXHR, textStatus) ->
       console.log("signin failed: #{textStatus}")
-      
+
