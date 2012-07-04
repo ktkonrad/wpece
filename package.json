@@ -18,7 +18,7 @@
         "hashish": "0.0.x",
         "bcrypt": "0.7.x",
         "mongoose": "2.7.x",
-        "mongoose-auth": "0.0.x"
+        "mongoose-auth": "https://github.com/ktkonrad/mongoose-auth/tarball/master"
     },
     "engine": "node >= 0.8.1"
 }

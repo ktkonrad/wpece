@@ -37,8 +37,8 @@ mongooseAuth.helpExpress(app);
 app.dynamicHelpers {
   # make session data available in views
   session: (req, res) ->
-    return req.session;
-  }
+    req.session;
+}
 
 # serve it
 app.listen 10000

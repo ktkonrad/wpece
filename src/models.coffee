@@ -61,6 +61,13 @@ UserSchema.plugin mongooseAuth, {
   }
 }
 
+UserSchema.pre 'save', (next) ->
+  console.log "pre save: #{this}"
+  login_type = @email.split(':', 1)
+  if login_type
+    @name = this[login_type].name
+  next()
+
 User = mongoose.model('User', UserSchema);      
 
 module.exports = {User}
