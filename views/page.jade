@@ -18,9 +18,13 @@ html
               | Logged in as #{user.fb.name || user.google.name || user.email}. 
               a#logout_button(href="/logout") Log out
           else
+            a#signup_button(href="javascript: void(0);") Signup
+            |  or 
             a#login_button(href="javascript: void(0);") Log in
         #title Winter Park Elk Court Escapes
       #main
         block main
-    #login
+    #login.floating
       include login
+    #signup.floating
+      include signup
