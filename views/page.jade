@@ -14,13 +14,13 @@ html
           img(src="/images/logo.gif")
         #user
           if user
-            p#signed_in_as
-              | Signed in as #{user.fb.name || user.google.name || user.email}. 
-              a#signout_button(href="/logout") Sign out
+            p#loged_in_as
+              | Logged in as #{user.fb.name || user.google.name || user.email}. 
+              a#logout_button(href="/logout") Log out
           else
-            a#signin_button(href="javascript: void(0);") Sign in
+            a#login_button(href="javascript: void(0);") Log in
         #title Winter Park Elk Court Escapes
       #main
         block main
-    #signin
-      include signin
+    #login
+      include login

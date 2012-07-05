@@ -1,0 +1,13 @@
+| login with 
+a(href="/auth/facebook") facebook
+|  or 
+a(href="/auth/google") google
+
+form#login_form(action="/login")
+  label email
+  input#login_email(name="email")
+  br
+  label password
+  input#login_password(type="password", name="password")
+  br
+  input#login_submit(type="submit", value="Log in")
