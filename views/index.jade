@@ -3,5 +3,25 @@ extends page
 block styles
   link(type="text/css", rel="stylesheet", href="styles/index.css")
 
+block scripts
+  script(type="text/javascript", src="/scripts/bootstrap/bootstrap-carousel.js")
+
+
 block main
-  include slideshow
+  .container-fluid
+    .row-fluid
+      .span1
+        // this is to center the span10 below
+        // should be able to do .span10.offset1 but it doesn't work
+      .span10
+        #main.hero-unit
+          h1 Winter Park Elk Court Escapes
+            #slideshow.carousel.slide
+              .carousel-inner
+                - var numImages = 7, i
+                - for (i=1; i <= numImages ; i++)
+                  .item
+                    img(src="/images/#{i}.jpeg")
+                a.left.carousel-control(href="#slideshow", data-slide="prev") &lsaquo;
+                a.right.carousel-control(href="#slideshow", data-slide="next") &rsaquo;
+          p These luxury cabins are simply the best value in the Fraser / Winter Park area

@@ -1,4 +1,8 @@
 $(document).ready ->
+
+  $('#slideshow').carousel({interval: 3000})
+
+  #### old stuff
   ## login and signup stuff
   $login =  $('#login')
   $signup = $('#signup')

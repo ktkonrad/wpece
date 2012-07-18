@@ -1,30 +1,58 @@
 doctype 5
 html
   head
-    link(type="text/css", rel="stylesheet", href="styles/page.css")
+    link(type="text/css", rel="stylesheet", href="styles/bootstrap.css")
     block styles
     script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
     script(type="text/javascript", src="/scripts/page.js")
+    script(type="text/javascript", src="/scripts/bootstrap/bootstrap-dropdown.js")
     block scripts
   body
     title Winter Park Elk Court Escapes
-    #content
-      #header
-        #logo 
-          img(src="/images/logo.gif")
-        #user
-          if user
-            p#loged_in_as
-              | Logged in as #{user.fb.name || user.google.name || user.email}. 
-              a#logout_button(href="/logout") Log out
-          else
-            a#signup_button(href="javascript: void(0);") Signup
-            |  or 
-            a#login_button(href="javascript: void(0);") Log in
-        #title Winter Park Elk Court Escapes
-      #main
-        block main
-    #login.floating
-      include login
-    #signup.floating
-      include signup
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href="#") Winter Park Elk Court Escapes
+          .nav-collapse
+            ul.nav
+              li.active
+                a(href='#') Home
+              li
+                a(href='#about') About
+              li
+                a(href='#contact') Contact
+        //   
+          .btn-group.pull-right
+            a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+              //- var user = {fb: {name: "Kyle Konrad"}}
+              if user
+                i.icon-user
+                |  #{user.fb.name || user.google.name || user.email} 
+              else
+                |  Sign In 
+              span.caret
+
+            if user
+              ul.dropdown-menu
+                li
+                  a(href='#') Profile
+                li.divider
+                li
+                  a(href='#') Sign Out
+            else
+              .dropdown-menu
+                | login with 
+                a(href="/auth/facebook") facebook
+                |  or 
+                a(href="/auth/google") google
+                form
+                  label Username
+                  input(name="user[name]")
+                  label Password
+                  input(name="user[password]")
+                  input.btn(type="submit", value="Sign In")
+    block main

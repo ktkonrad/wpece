@@ -1,0 +1,18 @@
+| login with 
+a(href="/auth/facebook") facebook
+|  or 
+a(href="/auth/google") google
+
+form#signup_form(action="/register")
+  label email
+  input#signup_email(name="email")
+  br
+  label password
+  input#signup_password(type="password", name="password")
+  br
+  label confirm password
+  input#signup_password_verify(type="password", name="password_verify")
+  br
+  input#signup_submit(type="submit", value="Sign up")
+
+a#signup_close(href="javascript: void(0);") [close]
