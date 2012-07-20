@@ -25,10 +25,9 @@ html
                 a(href='#about') About
               li
                 a(href='#contact') Contact
-        //   
+
           .btn-group.pull-right
             a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
-              //- var user = {fb: {name: "Kyle Konrad"}}
               if user
                 i.icon-user
                 |  #{user.fb.name || user.google.name || user.email} 

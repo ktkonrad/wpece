@@ -5,16 +5,23 @@ block styles
 
 block scripts
   script(type="text/javascript", src="/scripts/bootstrap/bootstrap-carousel.js")
-
+  script(type="text/javascript", src="/scripts/fblike.js")
 
 block main
-  .container-fluid
+  .container-fluid#main
     .row-fluid
-      .span1
-        // this is to center the span10 below
-        // should be able to do .span10.offset1 but it doesn't work
-      .span10
-        #main.hero-unit
+      .span3
+        .sidebar-nav.well
+          ul.nav.nav-list
+            li
+              a(href="#amenities") Amenities
+            li
+              a(href="#thingstodo") Things to do
+            li
+              a(href="#transportation") Transportation
+          .fb-like(data-href="https://www.facebook.com/pages/Winter-Park-Elk-Court-Escapes/170710176307706", data-send="false", data-width="225px", data-show-faces="true", data-font="arial")
+      .span9
+        .hero-unit
           h1 Winter Park Elk Court Escapes
             #slideshow.carousel.slide
               .carousel-inner
