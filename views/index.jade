@@ -6,11 +6,9 @@ block styles
 block scripts
   script(type="text/javascript", src="/scripts/bootstrap/bootstrap-carousel.js")
   script(type="text/javascript", src="/scripts/fblike.js")
-
+  script(type="text/javascript", src="/scripts/bootstrap/bootstrap-modal.js")
+      
 block main
-  .modal.hide.fade
-
-
   .container-fluid#main
     .row-fluid
       .span3
@@ -35,3 +33,58 @@ block main
                 a.left.carousel-control(href="#slideshow", data-slide="prev") &lsaquo;
                 a.right.carousel-control(href="#slideshow", data-slide="next") &rsaquo;
           p These luxury cabins are simply the best value in the Fraser / Winter Park area
+
+      .modal.hide.fade#amenities
+        .modal-header
+          button.close(type="button", data-dismiss="modal")&times;
+          h3 Amenities
+        .modal-body
+          h4 In-house Amenities
+          ul
+            li Gourmet kitchen with fresh ground coffee maker
+            li Washer and dryer
+            li Free wireless internet
+            li 2 large LCD TV’s, stereo
+            li All beds are king or queen size with premium mattresses
+            li Outdoor gas grill
+            li Hot Spring hot tub with salt water system to keep your skin silky smooth
+          h4 Special Elk Court Services
+          ul
+            li In house massage - at spectacular rates from Lara Kurtak, certified massage therapist (Swedish, Deep Tissue, Neuromuscular, Stress Relief, Reiki/Energy work, Young Living Essential Oil Therapy).  Nothing is better after a vigorous day skiing or hiking.  BOOK EARLY.  There are also a number of SPA’s and massage centers in Fraser and Winter park minutes away.
+            li Food service - give us your order (order form) before you arrive and the cabin will be fully stocked and ready for you saving the headache of shopping when you first arrive.
+            li Catering or Private Chef - Rather than eating out, enjoy the relaxed atmosphere at Elk Court with an in house private chef.  A variety of menus from the simple to the sublime are available.  BOOK EARLY
+            li Group Events - Let Grand Concierge help you plan an event to remember.  Family reunions, weddings, group outings, birthday & holiday celebrations.  There are four Elk Court Cabins located within steps of each other, each with 5 bedrooms.  An absolutely perfect setting for groups large and small
+            li Lift tickets - Let us get your lift tickets for you in advance.  One less thing to worry about!
+            li Child care - Let us help you find child care arrangements that meet YOUR needs
+            li ANYTHING ELSE? - Just let us know, we can probably help you out.
+
+        .modal-footer
+          a(href="#", class="btn", data-dismiss="modal") Close
+      .modal.hide.fade#thingstodo
+        .modal-header
+          button.close(type="button", data-dismiss="modal")&times;
+          h3 Things to do
+        .modal-body
+          h4 Summer Activities
+          ul
+            li Biking
+            li etc
+          h4 Winter Activities
+          ul
+            li Skiing
+            li etc
+        .modal-footer
+          a(href="#", class="btn", data-dismiss="modal") Close
+      .modal.hide.fade#transportation
+        .modal-header
+          button.close(type="button", data-dismiss="modal")&times;
+          h3 Transportation
+        .modal-body
+          h4 Skiing
+          h4 Airport
+          h4 Getting Around
+          h4 Rental Cars
+        .modal-footer
+          a(href="#", class="btn", data-dismiss="modal") Close
+
+
