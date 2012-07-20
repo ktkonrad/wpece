@@ -8,17 +8,20 @@ block scripts
   script(type="text/javascript", src="/scripts/fblike.js")
 
 block main
+  .modal.hide.fade
+
+
   .container-fluid#main
     .row-fluid
       .span3
         .sidebar-nav.well
           ul.nav.nav-list
             li
-              a(href="#amenities") Amenities
+              a(data-toggle="modal", href="#amenities") Amenities
             li
-              a(href="#thingstodo") Things to do
+              a(data-toggle="modal", href="#thingstodo") Things to do
             li
-              a(href="#transportation") Transportation
+              a(data-toggle="modal", href="#transportation") Transportation
           .fb-like(data-href="https://www.facebook.com/pages/Winter-Park-Elk-Court-Escapes/170710176307706", data-send="false", data-width="225px", data-show-faces="true", data-font="arial")
       .span9
         .hero-unit

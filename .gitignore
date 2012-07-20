@@ -1,5 +1,10 @@
 *~
-lib
+# ignore everything in lib except for fblike.js
+lib/*
+!lib/scripts
+lib/scripts/*
+!lib/scripts/fblike.js
+
 public/styles/*.css
 .sass-cache
 node_modules
