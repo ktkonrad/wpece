@@ -5,6 +5,11 @@ lib/*
 lib/scripts/*
 !lib/scripts/fblike.js
 
+# ignore everything in bootstrap except variables.less
+bootstrap/*
+!bootstrap/less/variables.less
+
+
 public/styles/*.css
 .sass-cache
 node_modules
