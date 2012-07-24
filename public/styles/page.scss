@@ -1,32 +1,28 @@
 @import "colors";
 @import "header";
 
-.section {
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -o-border-radius: 15px;
-    -ie-border-radius: 15px;
-    width: 100%;
-    padding: 15px;
+// reservations modal formatting
+.rates {
+    padding-bottom: 0;
+    li {
+        display: inline-block;
+        width: 8.33%;
+    }
+    .bar { width: 100%; }
+    .rate-blocks {
+        position: relative;
+        left: -4.33%;
+        width: 100%;
+        text-align: center;
+    }
+    #winter { width: 16.66%; }
+    #peak { width: 8.33%; }
+    #spring { width: 4.16%; }
+    #summer { width: 58.33%; }
+    #holiday { width: 12.5%; }
+    .tip {
+        border-radius: 6px;
+        color: white;
+        text-decoration: none;
+    }
 }
-
-body {
-    margin-top: 60px;
-    margin-bottom: 40px;
-    background-color: $background_color;
-    text-size: 13pt;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-#content {
-    width: 75%;
-    margin: auto;
-}
-
-#main {
-    @extend .section;
-    background-color: $main_color;
-}
-
-
