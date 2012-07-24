@@ -1,6 +1,8 @@
 $(document).ready ->
 
+  # initializion bootstrap stuff
   $('#slideshow').carousel({interval: 3000})
+  $('#amenities').modal({show: false})
 
   #### old stuff
   ## login and signup stuff
