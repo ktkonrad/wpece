@@ -3,11 +3,15 @@ html
   head
     link(type="text/css", rel="stylesheet", href="styles/bootstrap.css")
     link(type="text/css", rel="stylesheet", href="styles/page.css")
+    link(type="text/css", rel="stylesheet", href="styles/kalendae.css")      
     block styles
     script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
     script(type="text/javascript", src="/scripts/page.js")
+    script(type="text/javascript", src="/scripts/availability.js")
     script(type="text/javascript", src="/scripts/bootstrap/bootstrap-dropdown.js")
     script(type="text/javascript", src="/scripts/bootstrap/bootstrap-tooltip.js")
+    script(type="text/javascript", src="/scripts/kalendae.js")
+    script(type="text/javascript", src="https://apis.google.com/js/client.js?onload=gapiCallback")
     block scripts
   body
     title Winter Park Elk Court Escapes
@@ -56,45 +60,12 @@ html
                   label Password
                   input(name="user[password]")
                   input.btn(type="submit", value="Sign In")
-    
     .modal.hide.fade#reservations
       .modal-header
         button.close(type="button", data-dismiss="modal")&times;
         h3 Reservations
       .modal-body
-        h4 Call us
-        p Please call 
-          a(href="tel:9702812405") (970) 281-2405
-          |  to make a reservation.
-        h4 Nightly Rates
-        p Rates vary by season. Prices below are in $USD per night.
-        .rates.well
-          ul
-            li J
-            li F
-            li M
-            li A
-            li M
-            li J
-            li J
-            li A
-            li S
-            li O
-            li N
-            li D
-          ul.rate-blocks
-            // .progress-XXX is a bootstrap hack for coloring
-            li#winter.progress.progress-success
-              .bar.tip(href="#", rel="tooltip", title="January 4 - February 28/29") 500
-            li#peak.progress.progress-warning
-              .bar.tip(href="#", rel="tooltip", title="March 1 - March 31") 600
-            li#spring.progress.progress-success
-              .bar.tip(href="#", rel="tooltip", title="April 1 - April 15") 500
-            li#summer.progress.progress-info
-              .bar.tip(href="#", rel="tooltip", title="April 16 - November 22") 400
-            li#holiday.progress.progress-danger
-              .bar.tip(href="#", rel="tooltip", title="November 23 - January 3") 1000
-
+        include reservations
       .modal-footer
         a(href="#", class="btn", data-dismiss="modal") Close
 

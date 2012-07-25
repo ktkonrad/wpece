@@ -1,0 +1,44 @@
+h4 Call us
+p Please call 
+  a(href="tel:9702812405") (970) 281-2405
+  |  to make a reservation.
+h4 Availability
+  form.form-horizontal
+    .control-group
+      .control-label(for="numCabins") Number of cabins
+      .controls
+        select.span1#numCabins
+          option 1
+          option 2
+          option 3
+          option 4
+   .auto-kal(data-kal="months: 2, direction: 'future', blackout: blackout, id: 'availability'")
+
+h4 Nightly Rates
+p Rates vary by season. Prices below are in $USD per night.
+.rates.well
+  ul
+    li J
+    li F
+    li M
+    li A
+    li M
+    li J
+    li J
+    li A
+    li S
+    li O
+    li N
+    li D
+  ul.rate-blocks
+    // .progress-XXX is a bootstrap hack for coloring
+    li#winter.progress.progress-success
+      .bar.tip(href="#", rel="tooltip", title="January 4 - February 28/29") 500
+    li#peak.progress.progress-warning
+      .bar.tip(href="#", rel="tooltip", title="March 1 - March 31") 600
+    li#spring.progress.progress-success
+      .bar.tip(href="#", rel="tooltip", title="April 1 - April 15") 500
+    li#summer.progress.progress-info
+      .bar.tip(href="#", rel="tooltip", title="April 16 - November 22") 400
+    li#holiday.progress.progress-danger
+      .bar.tip(href="#", rel="tooltip", title="November 23 - January 3") 1000

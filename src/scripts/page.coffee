@@ -1,29 +1,20 @@
 $(document).ready ->
 
   # initializion bootstrap stuff
-  $('#slideshow').carousel({interval: 3000})
-  $('#amenities').modal({show: false})
+  $('#slideshow').carousel {interval: 3000}
+  $('#amenities').modal {show: false}
   $('.tip').tooltip()
 
-  #### old stuff
-  ## login and signup stuff
-  $login =  $('#login')
-  $signup = $('#signup')
+  # bind moment to window for global use
+  window.moment = Kalendae.moment;
 
-  # show login div on login button click
-  $('#login_button').click ->
-    $login.css 'left', Math.max(($(window).width() - $login.width())/2, 0) # center it
-    $login.show()
+  # create a global availability object
+  window.availability = new Availability()
+  window.blackout = (date, callback) -> availability.blackoutMonth(date, callback)
 
-  # show signup div on signup button click
-  $('#signup_button').click ->
-    $signup.css 'left', Math.max(($(window).width() - $signup.width())/2, 0) # center it
-    $signup.show()
+# bind this to window so it can be used used as a callback for loading the google api
+window.gapiCallback = () ->
+  console.log 'callback'
+  gapi.client.setApiKey 'AIzaSyDAYWkAAkTVcBp36gN50FTC9j9wO2M0c0o'
+  gapi.client.load 'calendar', 'v3', availability.ready
 
-  # hide login div on login close click
-  $('#login_close').click ->
-    $login.hide()
-
-  # hide signup div on signup close click
-  $('#signup_close').click ->
-    $signup.hide()
