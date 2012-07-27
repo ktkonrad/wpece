@@ -9,12 +9,16 @@ $(document).ready ->
   window.moment = Kalendae.moment;
 
   # create a global availability object
-  window.availability = new Availability()
+  window.availability = new Availability parseInt($('#numCabins').val())
   window.blackout = (date, callback) -> availability.blackoutMonth(date, callback)
+
+  # add change listener for number of cabins
+  $('#numCabins').change ->
+    availability.numCabins = $(this).val()
+    Kalendae.availability.draw()
 
 # bind this to window so it can be used used as a callback for loading the google api
 window.gapiCallback = () ->
-  console.log 'callback'
   gapi.client.setApiKey 'AIzaSyDAYWkAAkTVcBp36gN50FTC9j9wO2M0c0o'
-  gapi.client.load 'calendar', 'v3', availability.ready
+  gapi.client.load 'calendar', 'v3'
 

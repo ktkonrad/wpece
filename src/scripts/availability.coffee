@@ -1,5 +1,5 @@
 class Availability
-  constructor: (@numCabins = 2) ->
+  constructor: (@numCabins = 1) ->
     @occupied = {}
     @calendarIds = [
       'lv6qar50diur7kqt1s5vsrk3lo@group.calendar.google.com', # cabin 1
@@ -8,18 +8,13 @@ class Availability
       'fbp9ha04eolkj57ufkm1plcbu0@group.calendar.google.com'  # cabin 6
     ]
   
-
-  # callback when google api is loaded
-  ready: () =>
-    true
-
   # execute callback for each blacked out date in month
   # monthDate - a moment date object
   blackoutMonth: (monthDate, callback) =>
     [year, month] = [monthDate.year(), monthDate.month()]
     if @occupied[year]?[month]
       # loop over days in month
-      currentDay = monthDate.date(1)
+      currentDay = moment(monthDate).date(1)
       end = moment(currentDay).add('months', 1)
       while currentDay < end
         callback(currentDay) if @calendarIds.length - @occupied[year][month][currentDay.date()] < @numCabins # NOTE: @occupied[][][] may be undefined (this means 0 cabins are occupied)
