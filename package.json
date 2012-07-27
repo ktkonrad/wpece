@@ -19,5 +19,5 @@
     "dependencies": {
         "express": "2.5.x",
         "jade": "0.26.x"
-    },
+    }
 }
