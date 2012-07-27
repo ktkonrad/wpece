@@ -1,10 +1,4 @@
 *~
-# ignore everything in lib except for fblike.js
-lib/*
-!lib/scripts
-lib/scripts/*
-!lib/scripts/fblike.js
-
 # ignore everything in bootstrap except variables.less
 bootstrap/*
 !bootstrap/less/variables.less
