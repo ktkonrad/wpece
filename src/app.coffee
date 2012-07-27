@@ -41,6 +41,6 @@ app.dynamicHelpers {
 }
 
 # serve it
-port = process.env.port or 10000
+port = process.env.PORT or 10000
 app.listen port
 console.log "Serving on port #{port}"
