@@ -5,13 +5,13 @@ block styles
 
 block scripts
   script(type="text/javascript", src="/scripts/bootstrap/bootstrap-carousel.js")
-  script(type="text/javascript", src="/scripts/fblike.js")
+  script(type="text/javascript", src="/scripts/social.js")
   script(type="text/javascript", src="/scripts/bootstrap/bootstrap-modal.js")
       
 block main
   .container-fluid#main
     .row-fluid
-      .span3
+      .span2
         .sidebar-nav.well
           ul.nav.nav-list
             li
@@ -20,8 +20,15 @@ block main
               a(data-toggle="modal", href="#thingstodo") Things to do
             li
               a(data-toggle="modal", href="#transportation") Transportation
-          .fb-like(data-href="https://www.facebook.com/pages/Winter-Park-Elk-Court-Escapes/170710176307706", data-send="false", data-width="225px", data-show-faces="true", data-font="arial")
-      .span9
+          .social
+            span.facebook
+              .fb-root
+              .fb-like(data-href="https://www.facebook.com/pages/Winter-Park-Elk-Court-Escapes/170710176307706", data-send="false", data-show-faces="false", data-font="arial", data-layout="button_count")
+            span.twitter
+              a.twitter-share-button(href="https://twitter.com/share", data-size="medium", data-text="Check out these great cabins in Winter Park, CO", data-lang="en")
+            span.google-plus
+              .g-plusone(data-size="medium")
+      .span10
         .hero-unit
           h1 Winter Park Elk Court Escapes
             #slideshow.carousel.slide
