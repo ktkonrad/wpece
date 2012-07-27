@@ -1,0 +1,55 @@
+.floating {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  margin: auto;
+  top: 30px;
+  width: 300px;
+  height: 200px;
+  background: white;
+  border: 2px solid black;
+    border-radius: 10px; }
+
+#header {
+  height: 240px;
+  background: #080b74; }
+
+#logo {
+  float: left; }
+  #logo img {
+    width: 225px;
+    height: 240px; }
+
+#title {
+  float: right;
+  font-size: 40pt; }
+
+#user {
+  float: right; }
+
+.rates {
+  padding-bottom: 0; }
+  .rates li {
+    display: inline-block;
+    width: 8.33%; }
+  .rates .bar {
+    width: 100%; }
+  .rates .rate-blocks {
+    position: relative;
+    left: -4.33%;
+    width: 100%;
+    text-align: center; }
+  .rates #winter {
+    width: 16.66%; }
+  .rates #peak {
+    width: 8.33%; }
+  .rates #spring {
+    width: 4.16%; }
+  .rates #summer {
+    width: 58.33%; }
+  .rates #holiday {
+    width: 12.5%; }
+  .rates .tip {
+    border-radius: 6px;
+    color: white;
+    text-decoration: none; }

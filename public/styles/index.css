@@ -1,0 +1,43 @@
+.floating {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  margin: auto;
+  top: 30px;
+  width: 300px;
+  height: 200px;
+  background: white;
+  border: 2px solid black;
+    border-radius: 10px; }
+
+#slideshow {
+  margin: 50px auto;
+  position: relative;
+  width: 600px;
+  height: 400px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); }
+  #slideshow .slide {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px; }
+
+#main {
+  margin-top: 60px; }
+
+.sidebar-nav {
+  position: fixed; }
+
+.social {
+  margin-top: 15px;
+  margin-left: 15px; }
+  .social span {
+    display: block;
+    height: 21px;
+    margin-bottom: 8px; }
+
+.hero-unit h1 {
+  text-align: center;
+  font-size: 56px; }

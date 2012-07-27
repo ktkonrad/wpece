@@ -1,9 +1,7 @@
 *~
-# ignore everything in bootstrap except variables.less
-bootstrap/*
-!bootstrap/less/variables.less
 
+public/styles/bootstrap/*
+!public/style/bootstrap/variables.less
 
-public/styles/*.css
 .sass-cache
 node_modules
