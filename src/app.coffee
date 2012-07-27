@@ -33,7 +33,7 @@ app.get '/logout', (req, res) ->
   res.redirect('/')
 
 # helpers
-mongooseAuth.helpExpress(app);
+#mongooseAuth.helpExpress(app);
 app.dynamicHelpers {
   # make session data available in views
   session: (req, res) ->
