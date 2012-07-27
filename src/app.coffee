@@ -2,8 +2,8 @@
 fs           = require "fs"
 express      = require "express"
 jade         = require "jade"
-mongooseAuth = require "mongoose-auth"
-models       = require "./models"
+#mongooseAuth = require "mongoose-auth"
+#models       = require "./models"
 
 # initialization
 app = express.createServer()
@@ -12,7 +12,7 @@ app.use express.bodyParser()
 #app.use express.methodOverride()
 app.use express.cookieParser()
 app.use express.session({secret: "94fjf49o843a8"})
-app.use mongooseAuth.middleware()
+#app.use mongooseAuth.middleware()
 app.use app.router
 app.use express.static(__dirname + "/../public")
 app.use express.errorHandler()
